@@ -21,7 +21,7 @@
 
     width: auto;
     height: 30px;
-    margin: 20px 15px 20px 15px;
+    margin: 20px 30px 20px 15px;
     font-size: 12px;
     font-weight: 500;
     color: rgb(255, 142, 162);
