@@ -7,47 +7,36 @@
     <div class="login-form">
       <div class="sign-in-htm">
         <div class="group">
-          <label for="user" class="label">Username</label>
-          <input id="user" type="text" class="input">
+          <label for="loginUser" class="label">Username</label>
+          <input id="loginUser" type="text" class="input">
         </div>
         <div class="group">
           <label for="pass" class="label">Password</label>
           <input id="pass" type="password" class="input" data-type="password">
         </div>
-        <!-- <div class="group">
-          <input id="check" type="checkbox" class="check" checked>
-          <label for="check"><span class="icon"></span> Keep me Signed in</label>
-        </div> -->
         <div class="group">
-          <input type="submit" class="button" value="Sign In">
+          <input type="submit" class="button" value="Sign In" @click="signIn()">
         </div>
         <div class="hr"></div>
-        <!-- <div class="foot-lnk">
-          <a href="#forgot">Forgot Password?</a>
-        </div> -->
       </div>
       <div class="sign-up-htm">
         <div class="group">
-          <label for="user" class="label">Username</label>
-          <input id="user" type="text" class="input">
+          <label for="signUpUser" class="label">Username</label>
+          <input id="signUpUser" type="text" class="input">
         </div>
         <div class="group">
           <label for="pass" class="label">Password</label>
-          <input id="pass" type="password" class="input" data-type="password">
+          <input id="password1" type="password" class="input" data-type="password">
         </div>
         <div class="group">
           <label for="pass" class="label">Repeat Password</label>
-          <input id="pass" type="password" class="input" data-type="password">
+          <input id="password2" type="password" class="input" data-type="password">
         </div>
-        <!-- <div class="group">
-          <label for="pass" class="label">Email Address</label>
-          <input id="pass" type="text" class="input">
-        </div> -->
         <div class="group">
-          <input type="submit" class="button" value="Sign Up" name="Sign up">
+          <input type="submit" class="button" id="signUp"
+            value="Sign Up" name="Sign up" @click="signUp()">
         </div>
         <div class="foot-lnk">
-
         </div>
       </div>
     </div>
@@ -56,18 +45,40 @@
 </template>
   
 <script>
-import Frame from '../components/Frame.vue';
-
-import axios from 'axios';
+import Frame from '../components/Frame.vue'
+import router from '../router'
 
 export default {
-    name: "App",
-    components: {
-        Frame
-    
+  name: 'App',
+  components: {
+    Frame
+  },
+  methods: {
+    signUp() {
+      const signUpUser = document.getElementById('signUpUser').value
+      const password1 = document.getElementById('password1').value
+      const password2 = document.getElementById('password2').value
+      if((signUpUser === '') || (password1 === '') || password2 === '') {
+        alert('정보를 모두 입력해주세요.')
+      } else {
+        if (password1 === password2) {
+          alert('회원가입에 성공했습니다.')
+          router.go()
+        } else { alert('비밀번호가 일치하지 않습니다. 다시 입력해주세요.') }
+      }
     },
-    
-};
+    signIn() {
+      const loginUser = document.getElementById('loginUser').value
+      const password = document.getElementById('pass').value
+      if ((loginUser === '') || (password === '')) {
+        alert('정보를 모두 입력해주세요')
+      } else {
+        alert('로그인에 성공했습니다.')
+        router.push({path:'/home'})
+      }
+    }
+  }
+}
 
 </script>
   
@@ -83,24 +94,16 @@ body{
 .clearfix:after{clear:both;display:block}
 a{color:inherit;text-decoration:none}
 
-/* .logo{
-    height: 10em;
-    padding: 1em;
-    margin-left:-10px;
-    margin-bottom: 10px;
-    display: block;
-    align-content: center;
-} */
 .login-wrap{
   width:100vw;
   height: 100vh;
   margin:auto;
   max-width:525px;
   min-height:670px;
-  /* position:relative; */
+  position:relative;
 }
 .login-html{
-  width:30%;
+  width:100%;
   height:100%;
   position:absolute;
   padding:90px 70px 50px 70px;
@@ -153,7 +156,7 @@ a{color:inherit;text-decoration:none}
 .login-form .group .input,
 .login-form .group .button{
   width:100%;
-  color:#fff;
+  color:black;
   display:block;
 }
 .login-form .group .input,
@@ -203,7 +206,7 @@ a{color:inherit;text-decoration:none}
   transform:scale(0) rotate(0);
 }
 .login-form .group .check:checked + label{
-  color:#fff;
+  color:black;
 }
 .login-form .group .check:checked + label .icon{
   background:rgb(255, 142, 162);
@@ -221,11 +224,6 @@ a{color:inherit;text-decoration:none}
   transform:rotate(0);
 }
 
-/* .hr{
-  height:2px;
-  margin:60px 0 50px 0;
-  background:rgba(255,255,255,.2);
-} */
 .foot-lnk{
   text-align:center;
 }

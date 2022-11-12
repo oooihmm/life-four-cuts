@@ -29,7 +29,6 @@ export default {
     isNone() {
       const link = document.location.href
       const loginLink = 'http://localhost:8080/login'
-      console.log(link)
       if (link === loginLink) {
         this.show = false
       }
