@@ -1,14 +1,30 @@
 <template>
-  <div>
-    123
+  <div id="bigBody">
+    <Frame />
+    <div id="body">
+      123
+    </div>
   </div>
 </template>
 
 <script>
+import Frame from '@/components/Frame.vue'
 
 export default {
-  name: 'Home',
   components: {
+    Frame
   }
 }
 </script>
+
+<style scoped>
+  #bigBody {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #body {
+    height: 100%;
+    background-color: rgb(255, 142, 162);
+  }
+</style>
