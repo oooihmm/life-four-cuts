@@ -1,7 +1,7 @@
 <template>
     
 <div class="login-wrap">
-    
+  <Frame />
   <div class="login-html">
     <img class="logo" src="@/assets/logo.png" alt="logo"/>
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
@@ -59,9 +59,12 @@
 </template>
   
 <script>
+import Frame from '../components/Frame.vue';
+
   export default {
     name: "App",
     components: {
+        Frame
     
     }
   };

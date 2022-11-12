@@ -4,20 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    isNone() {
-      const link = document.location.href
-      const button = document.getElementById('login')
-      if (link === 'http://localhost:8080/') {
-        button.setAttribute('display', 'hidden')
-      }
-    }
-  }
-}
-</script>
-
 <style>
   button {
     height: 100%;
@@ -48,5 +34,4 @@ export default {
     color: white;
     background-color: rgb(255, 142, 162);
   }
-
 </style>

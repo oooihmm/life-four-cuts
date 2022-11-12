@@ -7,18 +7,36 @@
         </router-link>
       </div>
       <router-link to="/login">
-        <login />
+        <login v-show="show"/>
       </router-link>
     </header>
   </div>
 </template>
 
 <script>
-import login from "@/components/loginButton.vue"
+import login from '@/components/loginButton.vue'
 
 export default {
   components: {
     login
+  },
+  data() {
+    return {
+      show: true
+    }
+  },
+  methods: {
+    isNone() {
+      const link = document.location.href
+      const loginLink = 'http://localhost:8080/login'
+      console.log(link)
+      if (link === loginLink) {
+        this.show = false
+      }
+    }
+  },
+  mounted() {
+    this.isNone()
   }
 }
 </script>
