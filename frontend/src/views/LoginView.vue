@@ -1,7 +1,5 @@
 <template>
-    
 <div class="login-wrap">
-    
   <div class="login-html">
     <img class="logo" src="@/assets/logo.png" alt="logo"/>
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
@@ -48,7 +46,6 @@
         <div class="group">
           <input type="submit" class="button" value="Sign Up">
         </div>
-        <div class="hr"></div>
         <div class="foot-lnk">
 
         </div>
