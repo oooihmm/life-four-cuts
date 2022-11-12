@@ -44,7 +44,7 @@
           <input id="pass" type="text" class="input">
         </div> -->
         <div class="group">
-          <input type="submit" class="button" value="Sign Up">
+          <input type="submit" class="button" value="Sign Up" name="Sign up">
         </div>
         <div class="foot-lnk">
 
@@ -56,13 +56,17 @@
 </template>
   
 <script>
-  export default {
+import axios from 'axios';
+
+export default {
     name: "App",
     components: {
     
-    }
-  };
-  </script>
+    },
+    
+};
+
+</script>
   
 <style>
 body{
