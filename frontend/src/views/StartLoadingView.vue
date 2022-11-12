@@ -1,22 +1,22 @@
 <template>
-  <div id="div1">
-    <img id="logo" src="@/assets/logo.png" />
-    <div id="div2">
-        인생 포즈를 원하시나요?
+    <div id="div1">
+        <div id="div2">
+            <div id="div3">
+            인생 포즈를 원하시나요?
+            </div>
+            <img id="mainLogo" src="@/assets/logo.png" />
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-import router from "../router"
+import router from '../router'
 export default {
     name: 'StartLoading',
-    components: {
-    },
     mounted(){
         setTimeout(function() {
             console.log('ChangeToHome');
-            router.push({path:'/'});
+            router.push({path:'/home'});
         }, 3000);
     }
 }
@@ -24,30 +24,34 @@ export default {
 
 <style>
     #div1{
-        weight:100%;
-        height:100%;
+        width: 100vw;
+        height:100vh;
         background: rgb(254, 219, 219);
     }
 
     #div2{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    #div3{
         text-align: center;
-        margin-top: -10px;
         color: rgb(200, 117, 117);
         font-weight: bold;
         font-style: italic;
     }
 
     #text{
-        weight:100%;
+        width:100%;
         height:100%;
     }
 
-    #logo {
-        position: relative; 
-        top: 50%; 
-        left: 50%; 
-        transform: translate(-50%, -50%); 
-        width: 50%;
-        height: 30%;
+    #mainLogo {
+        position: relative;
+        width: 200px;
+        margin: 30px;
     }
 </style>

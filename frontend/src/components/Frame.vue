@@ -2,7 +2,7 @@
   <div id="body">
     <header>
       <div class="nav" id="logo">
-        <router-link to="/">
+        <router-link to="/home">
           <img src="@/assets/logo.png" id="logoImg">
         </router-link>
       </div>
@@ -44,7 +44,6 @@ export default {
 <style scoped>
   header {
     height: 70px;
-    width: 100wh;
     position:relative;
     background-color: white;
   }

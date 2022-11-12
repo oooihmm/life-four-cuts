@@ -2,7 +2,7 @@
   <div id="bigBody">
     <Frame />
     <div id="body">
-      123
+
     </div>
   </div>
 </template>
