@@ -26,6 +26,9 @@ export default {
     #div1{
         width: 100vw;
         height:100vh;
+        max-width:525px;
+        min-height:670px;
+        margin: auto;
         background: rgb(254, 219, 219);
     }
 

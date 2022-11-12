@@ -2,7 +2,6 @@
   <div id="bigBody">
     <Frame />
     <div id="body">
-
     </div>
   </div>
 </template>
@@ -21,6 +20,9 @@ export default {
   #bigBody {
     width: 100vw;
     height: 100vh;
+    margin: auto;
+    max-width:525px;
+    min-height:670px;
   }
 
   #body {

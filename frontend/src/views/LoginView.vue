@@ -2,7 +2,6 @@
 <div class="login-wrap">
   <Frame/>
   <div class="login-html">
-    <img class="logo" src="@/assets/logo.png" alt="logo"/>
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
     <div class="login-form">
@@ -75,7 +74,7 @@ export default {
 <style>
 body{
   margin:0;
-  color:#c323a5;
+  color:rgb(200, 117, 117);
   background:#c8c8c8;
   font:600 16px/18px 'Open Sans',sans-serif;
 }
@@ -84,27 +83,28 @@ body{
 .clearfix:after{clear:both;display:block}
 a{color:inherit;text-decoration:none}
 
-.logo{
+/* .logo{
     height: 10em;
     padding: 1em;
+    margin-left:-10px;
+    margin-bottom: 10px;
     display: block;
     align-content: center;
-}
+} */
 .login-wrap{
-  width:100%;
+  width:100vw;
+  height: 100vh;
   margin:auto;
   max-width:525px;
   min-height:670px;
-  position:relative;
-  /* background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center; */
-  box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+  /* position:relative; */
 }
 .login-html{
-  width:100%;
+  width:30%;
   height:100%;
   position:absolute;
   padding:90px 70px 50px 70px;
-  background:rgba(149, 51, 123, 0.9);
+  background:rgb(254, 219, 219);
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -137,8 +137,8 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
-  color:#fff;
-  border-color:#ee11c2;
+  color:rgb(255, 142, 162);
+  border-color:rgb(255, 142, 162);
 }
 .login-form{
   min-height:20em;
@@ -161,7 +161,7 @@ a{color:inherit;text-decoration:none}
   border:none;
   padding:15px 20px;
   border-radius:20px;
-  background:rgba(255,255,255,.1);
+  background:white;
 }
 .login-form .group input[data-type="password"]{
   text-security:circle;
@@ -172,7 +172,7 @@ a{color:inherit;text-decoration:none}
   font-size:12px;
 }
 .login-form .group .button{
-  background:#ee11c2;
+  background:rgb(255, 142, 162);
 }
 .login-form .group label .icon{
   width:15px;
@@ -180,7 +180,7 @@ a{color:inherit;text-decoration:none}
   border-radius:2px;
   position:relative;
   display:inline-block;
-  background:rgba(255,255,255,.1);
+  background:white;
 }
 .login-form .group label .icon:before,
 .login-form .group label .icon:after{
@@ -206,7 +206,7 @@ a{color:inherit;text-decoration:none}
   color:#fff;
 }
 .login-form .group .check:checked + label .icon{
-  background:#ee11c2;
+  background:rgb(255, 142, 162);
 }
 .login-form .group .check:checked + label .icon:before{
   transform:scale(1) rotate(45deg);
